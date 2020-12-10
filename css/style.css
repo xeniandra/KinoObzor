@@ -26,8 +26,12 @@ a.logo {
 }
 .search{
     display: flex;
-    width: 63%;
+    flex-wrap: wrap;
+    width: 61%;
     
+}
+form{
+    display: flex;
 }
 input.input-search{
     width: 697px;
@@ -299,10 +303,14 @@ a.social-link:hover{
     
 }
 
-@media (max-width: 1199px){
+@media (max-width: 1108px){
     .container{
         max-width: 1043px;
         margin: 0 auto
+    }
+    .search {
+        display: flex;
+        width: 100%;
     }    
     .container-promo {
         max-width: 1043px;
@@ -316,6 +324,7 @@ a.social-link:hover{
         max-width: 519px;
         font-size: 20px;
     }
+
     .promo {
         background: #ffffff url(../img/popcorn.png) no-repeat top 7px right 10px / 458px;
     }
