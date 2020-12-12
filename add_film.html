@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\normalize.css">
     <link rel="stylesheet" href="css\auth.css">
-    <title>KinoObzor - Авторизация</title>
+    <title>KinoObzor - Добавление фильма</title>
     <link rel="shortcut icon" href="img\XMLID.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
@@ -16,30 +16,47 @@
             <a href="index.html" class="logo">
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
-            <div class="search">
+            <div class="search search-change">
                 <form action="#">
                 <input type="text" class="input-search" placeholder="Введите название фильма...">
                 <button class="button-search"></button>
             </form>
             </div>
-
+            <a href="profile.html" class="login">
+                <img src="img\icon.svg" alt="icon" class="login">Профиль</a>
     </div>
 </header>
     <!-- /.header -->
 <main class="main">
 
     <div class="reelh">
-        <h2>РЕГИСТРАЦИЯ</h2>
+        <h2>ДОБАВЛЕНИЕ ФИЛЬМА</h2>
     </div>
-    <div class="container-promo">
+    <div class="container-promo change">
         <form action="#">
-            <input type="email" name="email" id="" placeholder="Введите email" class="input-auth" required autofocus>
-            <input type="text" name="nick" id="" placeholder="Введите никнейм" class="input-auth" required>
-            <input type="password" name="password" id="" placeholder="Введите пароль" class="input-auth" required>
-            <input type="password" name="password" id="" placeholder="Повторите пароль" class="input-auth" required>
-            <input type="button" value="Зарегистрироваться" class="button-auth">
+            <label for="name-film">Название:</label>
+            <input type="text" name="name-film" id="" class="input-auth" required autofocus>
+            <label for="country">Страна:</label>
+            <input type="text" name="country" id="" class="input-auth" required>
+            <label for="genre">Жанр:</label>
+            <input type="text" name="genre" id="" class="input-auth" required>
+            <label for="director">Режиссер:</label>
+            <input type="text" name="director" id="" class="input-auth" required>
+            <label for="scenario">Сценарий:</label>
+            <input type="text" name="scenario" id="" class="input-auth" required>
+            <label for="cast">В ролях:</label>
+            <input type="text" name="cast" id="" class="input-auth" required>
+            <label for="duration">Длительность:</label>
+            <input type="time" name="duration" id="" class="input-auth" required>
+            <label for="start-of-rental">Начало проката:</label>
+            <input type="date" name="start-of-rental" id="" class="input-auth" required>
+            <label for="download" class="download">Загрузить постер</label>
+            <input type="file" name="download" id="" class="input-auth download"  required>
+            
+
+            <input type="button" value="Добавить" class="button-auth">
+            
         </form>
-        <a href="authorization.html" class="to-reg">Уже есть аккаунт? Авторизуйтесь</a>
     </div>
 
 

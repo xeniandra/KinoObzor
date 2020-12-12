@@ -23,19 +23,15 @@ header{
 }
 .container-promo{
     margin: 4% auto;
-    padding: 4% 7%;
+    padding: 2% 4%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 840px;
+    width: 68%;
     background: #F4F4F4;
     box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
 }
-.change{
-    padding-top: 3%;
-    padding-bottom: 0%;
-}
+
 a.logo {
     display: flex;
 }
@@ -145,57 +141,24 @@ h2{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.container-promo form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
 
-.container-promo form ::placeholder {
-    height: 37px;
-    text-align: left;
-    padding-left: 15px;
-  }
-label{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 22px;
-    display: flex;
-    width: 66%;
-    padding-bottom: 2%;
-}
-.input-auth{
-    width: 66%;
-    height: 45px;
-    background: #FCFBFB;
-    border: 2px solid #B32D36;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+p.profile{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: -0.01em;
-    color: rgba(0, 0, 0, 0.56);
-    margin-bottom: 5%;
+    color: #000000;
+    margin: 2% 0%;
 }
-
-input.download{
-    height: auto;
-}
-
-div.buttons{
-    width: 100%;
+.buttons{
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3%;
 }
-.button-auth{
-    width: 42%;
-    height: 47px;
+a.change, button.change{
+    padding: 2% 7%;
     background: #B32D36;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
@@ -203,20 +166,20 @@ div.buttons{
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
+    line-height: 100%;
     letter-spacing: -0.01em;
     color: #FFFFFF;
-    border: none;
-    margin-bottom: 6%
-}
-.black{
-    background: #3B3A3D;
-    width: 32%;
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    width: 63%;
+    border: none;
+    margin-bottom: 4%;
 }
-.button-auth:hover{
+button.black{
+    background: #3B3A3D;
+}
+
+a.change:hover, button.change:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -227,34 +190,148 @@ div.buttons{
     transform: scale(1.1);
 }
 
-a.to-reg{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 22px;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.01em;
-    text-decoration-line: underline;
-    color: #000000;
+
+div.review{
+    display: flex;
+    margin: 3% auto;
+    padding: 0% 3%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    flex-direction: column;
+    width: 68%;
+    background: #F4F4F4;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
 }
-a.to-reg:hover{
+
+div.film{
+    display: flex;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0% 4%;
+}
+li{
+    font-size: 22px;
+    padding-bottom: 13%;
+
+}
+img.film{
+    width: 131px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+p.review{
+    font-size: 19px;
+    line-height: 111.5%;
+    text-align: justify;
+
+}
+
+.full-review{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    line-clamp: 5;
+    box-orient: vertical;
+}
+
+
+
+.buttons-rev{
+    display: flex;
+    justify-content: space-between
+}
+
+button.full, button.del-review{
+    background: #B32D36;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    padding: 1% 4%;
+    border: none;
+    color: #FFFFFF;
+}
+button.del-review{
+    background: #3B3A3D;
+}
+button.full:hover, button.del-review:hover{
     cursor: pointer;
-    color: red;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
+/* окно */
+.modal{
+    width: 840px;
+    height: 316px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F4F4F4;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    display: none;
+}
 
-
-
-
+p.mod{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #000000;
+    padding-bottom: 3%;
+}
+div.buttons-mod{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+button.mod{
+    width: 186px;
+    height: 47px;   
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    border: none;
+    background: #B32D36;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+button.mod:hover{
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+#no{
+    background: #3B3A3D;
+}
 /* ФУТЕР */
 footer{
     background: #b32d36;

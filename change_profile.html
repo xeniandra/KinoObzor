@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\normalize.css">
     <link rel="stylesheet" href="css\auth.css">
-    <title>KinoObzor - Авторизация</title>
+    <title>KinoObzor - Изменение профиля</title>
     <link rel="shortcut icon" href="img\XMLID.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
@@ -16,30 +16,36 @@
             <a href="index.html" class="logo">
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
-            <div class="search">
+            <div class="search search-change">
                 <form action="#">
                 <input type="text" class="input-search" placeholder="Введите название фильма...">
                 <button class="button-search"></button>
             </form>
             </div>
-
+            <a href="profile.html" class="login">
+                <img src="img\icon.svg" alt="icon" class="login">Профиль</a>
     </div>
 </header>
     <!-- /.header -->
 <main class="main">
 
     <div class="reelh">
-        <h2>РЕГИСТРАЦИЯ</h2>
+        <h2>ДАННЫЕ ПРОФИЛЯ</h2>
     </div>
-    <div class="container-promo">
+    <div class="container-promo change">
         <form action="#">
-            <input type="email" name="email" id="" placeholder="Введите email" class="input-auth" required autofocus>
-            <input type="text" name="nick" id="" placeholder="Введите никнейм" class="input-auth" required>
-            <input type="password" name="password" id="" placeholder="Введите пароль" class="input-auth" required>
-            <input type="password" name="password" id="" placeholder="Повторите пароль" class="input-auth" required>
-            <input type="button" value="Зарегистрироваться" class="button-auth">
+            <label for="login">Email: </label>
+            <input type="text" name="login" id="" value="ElenaK@mail.ru" class="input-auth">
+            <label for="nick">Никнейм: </label>
+            <input type="text" name="nick" id="" value="ElenaK" class="input-auth">
+            <label for="password">Пароль:</label>
+            <input type="password" name="password" id="" value="************" class="input-auth">
+            <div class="buttons">
+                <input type="button" value="Изменить" class="button-auth">
+                <a href="profile.html" class="button-auth black">Назад</a>
+            </div>
+            
         </form>
-        <a href="authorization.html" class="to-reg">Уже есть аккаунт? Авторизуйтесь</a>
     </div>
 
 
