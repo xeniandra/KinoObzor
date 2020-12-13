@@ -13,7 +13,7 @@
     <div class="page">
     <header class="header">
     <div class="container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" title="На главную">
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
             <div class="search search-change">
@@ -51,7 +51,7 @@
             <label for="start-of-rental">Начало проката:</label>
             <input type="date" name="start-of-rental" id="" class="input-auth" required>
             <label for="download" class="download">Загрузить постер</label>
-            <input type="file" name="download" id="" class="input-auth download"  required>
+            <input type="url" name="download" placeholder="Введите url постера" class="input-auth" required>
             
 
             <input type="button" value="Добавить" class="button-auth">
@@ -82,5 +82,9 @@
     </div>
 </footer>
 </div>
+<!-- кнопка наверх -->
+<a class="back_to_top" title="Наверх">↑</a>
+<script src="js\to_top.js"></script>
+<!-- кнопка наверх -->
 </body>
 </html>

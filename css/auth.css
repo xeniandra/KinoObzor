@@ -185,6 +185,10 @@ label{
 
 input.download{
     height: auto;
+    border: none;
+    background: none;
+    box-shadow: none;
+
 }
 
 div.buttons{
@@ -252,7 +256,35 @@ a.to-reg:hover{
 }
 
 
-
+/* кнопка наверх */
+.back_to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 29px;
+    z-index: 9999;
+    width: 47px;
+    height: 44px;
+    text-align: center;
+    line-height: 34px;
+    background: rgb(0 0 0 / 36%);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    border-radius: 9px;
+    font-size: 37px;
+  }
+  
+  .back_to_top:hover {
+    background: #e9ebec;
+    color: rgb(0 0 0 / 36%);
+  }
+  
+  .back_to_top-show {
+    display: block;
+  }
+/* кнопка наверх */
 
 
 /* ФУТЕР */

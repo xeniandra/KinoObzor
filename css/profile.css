@@ -175,6 +175,7 @@ a.change, button.change{
     border: none;
     margin-bottom: 4%;
 }
+
 button.black{
     background: #3B3A3D;
 }
@@ -216,7 +217,8 @@ ul{
 }
 li{
     font-size: 22px;
-    padding-bottom: 13%;
+    /* padding-bottom: 13%; */
+    padding-bottom: 5%;
 
 }
 img.film{
@@ -260,7 +262,7 @@ button.full, button.del-review{
 button.del-review{
     background: #3B3A3D;
 }
-button.full:hover, button.del-review:hover{
+button.full:hover, button.del-review:hover, button.add:hover, button.del:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -270,6 +272,27 @@ button.full:hover, button.del-review:hover{
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
+
+form.form-review{
+    display: flex;
+    width: 44%;
+    justify-content: space-between;
+}
+
+button.add, button.del{
+    background: #B32D36;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    padding: 1% 12%;
+    border: none;
+    color: #FFFFFF;
+}
+
+button.del{
+    background: #3B3A3D;
+    padding: 1% 12%;
+}
+
 
 /* окно */
 .modal{
@@ -332,6 +355,38 @@ button.mod:hover{
 #no{
     background: #3B3A3D;
 }
+
+/* кнопка наверх */
+.back_to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 29px;
+    z-index: 9999;
+    width: 47px;
+    height: 44px;
+    text-align: center;
+    line-height: 34px;
+    background: rgb(0 0 0 / 36%);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    border-radius: 9px;
+    font-size: 37px;
+  }
+  
+  .back_to_top:hover {
+    background: #e9ebec;
+    color: rgb(0 0 0 / 36%);
+  }
+  
+  .back_to_top-show {
+    display: block;
+  }
+/* кнопка наверх */
+
+
 /* ФУТЕР */
 footer{
     background: #b32d36;

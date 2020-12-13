@@ -13,7 +13,7 @@
     <div class="page">
     <header class="header">
     <div class="container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" title="На главную">
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
             <div class="search">
@@ -33,10 +33,14 @@
     </div>
     <div class="container-promo">
         <form action="#">
+            <label for="email">Email: </label>
             <input type="email" name="email" id="" placeholder="Введите email" class="input-auth" required autofocus>
+            <label for="nick">Никнейм: </label>
             <input type="text" name="nick" id="" placeholder="Введите никнейм" class="input-auth" required>
+            <label for="password">Пароль: </label>
             <input type="password" name="password" id="" placeholder="Введите пароль" class="input-auth" required>
-            <input type="password" name="password" id="" placeholder="Повторите пароль" class="input-auth" required>
+            <label for="password-repit">Повтор пароля: </label>
+            <input type="password" name="password-repit" id="" placeholder="Повторите пароль" class="input-auth" required>
             <input type="button" value="Зарегистрироваться" class="button-auth">
         </form>
         <a href="authorization.html" class="to-reg">Уже есть аккаунт? Авторизуйтесь</a>

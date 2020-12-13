@@ -288,6 +288,53 @@ div.my-review input{
 div.my-review input:hover{
     cursor: pointer;
 }
+
+.message{
+    padding: 0% 1%;
+    text-align: center;
+    font-weight: bold;
+    max-width: 798px;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 9px;
+    background: #F4F4F4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* кнопка наверх */
+.back_to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 29px;
+    z-index: 9999;
+    width: 47px;
+    height: 44px;
+    text-align: center;
+    line-height: 34px;
+    background: rgb(0 0 0 / 36%);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    border-radius: 9px;
+    font-size: 37px;
+  }
+  
+  .back_to_top:hover {
+    background: #e9ebec;
+    color: rgb(0 0 0 / 36%);
+  }
+  
+  .back_to_top-show {
+    display: block;
+  }
+/* кнопка наверх */
+
+
+
+
 /* ФУТЕР */
 footer{
     background: #b32d36;
