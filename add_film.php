@@ -13,7 +13,7 @@
     <div class="page">
     <header class="header">
     <div class="container">
-            <a href="index.html" class="logo" title="На главную">
+            <a href="index.php" class="logo" title="На главную">
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
             <div class="search search-change">
@@ -22,7 +22,7 @@
                 <button class="button-search"></button>
             </form>
             </div>
-            <a href="profile.html" class="login">
+            <a href="profile.php" class="login">
                 <img src="img\icon.svg" alt="icon" class="login">Профиль</a>
     </div>
 </header>

@@ -13,7 +13,7 @@
     <div class="page">
     <header class="header">
     <div class="container">
-            <a href="index.html" class="logo" title="На главную">
+            <a href="index.php" class="logo" title="На главную">
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
             <div class="search">
@@ -29,21 +29,17 @@
 <main class="main">
 
     <div class="reelh">
-        <h2>РЕГИСТРАЦИЯ</h2>
+        <h2>ВОЙТИ В УЧЕТНУЮ ЗАПИСЬ</h2>
     </div>
     <div class="container-promo">
         <form action="#">
             <label for="email">Email: </label>
             <input type="email" name="email" id="" placeholder="Введите email" class="input-auth" required autofocus>
-            <label for="nick">Никнейм: </label>
-            <input type="text" name="nick" id="" placeholder="Введите никнейм" class="input-auth" required>
-            <label for="password">Пароль: </label>
+            <label for="password">Пароль:</label>
             <input type="password" name="password" id="" placeholder="Введите пароль" class="input-auth" required>
-            <label for="password-repit">Повтор пароля: </label>
-            <input type="password" name="password-repit" id="" placeholder="Повторите пароль" class="input-auth" required>
-            <input type="button" value="Зарегистрироваться" class="button-auth">
+            <input type="button" value="Войти" class="button-auth">
         </form>
-        <a href="authorization.html" class="to-reg">Уже есть аккаунт? Авторизуйтесь</a>
+        <a href="registration.php" class="to-reg">Нет аккаунта? Зарегистрируйтесь</a>
     </div>
 
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\normalize.css">
     <link rel="stylesheet" href="css\profile.css">
-    <title>KinoObzor - Входящие отзывы</title>
+    <title>KinoObzor - Личный кабинет</title>
     <link rel="shortcut icon" href="img\XMLID.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
     <div class="page">
     <header class="header">
     <div class="container">
-            <a href="index.html" class="logo" title="На главную">
+            <a href="index.php" class="logo" title="На главную">
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
             <div class="search search-change">
@@ -22,24 +22,40 @@
                 <button class="button-search"></button>
             </form>
             </div>
-            <a href="profile.html" class="login">
-                <img src="img\icon.svg" alt="icon" class="login">Профиль</a>
+            <a href="authorization.php" class="login">
+                <img src="img\icon.svg" alt="icon" class="login">Выйти</a>
     </div>
 </header>
     <!-- /.header -->
 <main class="main">
 
     <div class="reelh">
-        <h2>ВХОДЯЩИЕ ОТЗЫВЫ</h2>
+        <h2>ЛИЧНЫЙ КАБИНЕТ</h2>
+    </div>
+    <div class="container-promo profile">
+        <p class="profile">Email: ElenaK@mail.ru</p>
+        <p class="profile">Никнейм: ElenaK</p>
+        <p class="profile">Написано отзывов: 1</p>
+        <p class="profile">Входящих отзывов: 2</p>
+        <div class="buttons">
+            <a href="add_film.php" class="change">Добавить фильм</a>
+            <a href="users_review.php" class="change">Входящие отзывы</a>
+            <a href="change_profile.php" class="change">Редактировать профиль</a>
+            <button class="change black" id="del-button">Удалить профиль</button>
+        </div>
+    </div>
+
+    <div class="reelh">
+        <h2>МОИ ОТЗЫВЫ</h2>
     </div>
     <div class="review">
         
         <div class="film">
             <img src="img\film.png" alt="Постер" class="film">
             <ul class="film">
-                <li class="user">Автор отзыва: ElenaK</li>
-                <li class="name-film">Фильм: Взаперти</li>
-                <li class="date">Дата отзыва: 22 ноября 2020 | 17:13</li>
+                <li class="name-film">Взаперти</li>
+                <li class="date">22 ноября 2020 | 17:13</li>
+                <li class="status">Статус: Ожидает модерацию</li>
             </ul>
            
         </div>
@@ -53,11 +69,7 @@
             </p>
             <div class="buttons-rev">
                 <button class="full">Читать полностью</button>
-                <form action="#" class="form-review">
-                <button class="add">Добавить</button>  
-                <button class="del">Удалить</button>  
-                </form>
-  
+                <button class="del-review">Удалить</buton>    
             </div>
             </div>
         
@@ -100,6 +112,6 @@
 <a class="back_to_top" title="Наверх">↑</a>
 <script src="js\to_top.js"></script>
 <!-- кнопка наверх -->
-<script src="js\review.js"></script>
+<script src="js\profile.js"></script>
 </body>
 </html>

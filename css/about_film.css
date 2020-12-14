@@ -131,27 +131,34 @@ main{
 .promo {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 div.about_film{
     background: #FFFFFF;
     box-shadow: 19px 13px 16px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
+    width: 64%;
     
 }
 section.promo img{
     filter: drop-shadow(19px 13px 16px rgba(0, 0, 0, 0.25));
+    width: 28%;
+    object-fit: cover;
 }
 ul{
     list-style-type: none;
     font-size: 20px;
-    line-height: 145%;
+    line-height: 143%;
     margin: 1% 5%;
+    padding: 1% 5%;
     padding-inline-start: 0;
 }
-li:last-child{
-    padding-top: 64px;
+li{
+    padding-bottom: 1%;
+}
+p.date{
+    padding-top: 6%;
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -190,11 +197,11 @@ color: #000000;
 }
 
 h3{
-font-size: 25px;
-line-height: 130%;
-align-items: center;
-text-align: center;
-letter-spacing: -0.01em;
+    font-size: 25px;
+    margin: 2% 0%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.01em;
 }
 
 div.review{
