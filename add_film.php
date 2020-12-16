@@ -1,3 +1,10 @@
+<?php
+session_start();
+require_once "php\connection.php";
+require_once "php\check_session.php";
+$thanks = $_GET['thanks'];
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -32,29 +39,45 @@
     <div class="reelh">
         <h2>ДОБАВЛЕНИЕ ФИЛЬМА</h2>
     </div>
-    <div class="container-promo change">
-        <form action="#">
-            <label for="name-film">Название:</label>
-            <input type="text" name="name-film" id="" class="input-auth" required autofocus>
-            <label for="country">Страна:</label>
-            <input type="text" name="country" id="" class="input-auth" required>
-            <label for="genre">Жанр:</label>
-            <input type="text" name="genre" id="" class="input-auth" required>
-            <label for="director">Режиссер:</label>
-            <input type="text" name="director" id="" class="input-auth" required>
-            <label for="scenario">Сценарий:</label>
-            <input type="text" name="scenario" id="" class="input-auth" required>
-            <label for="cast">В ролях:</label>
-            <input type="text" name="cast" id="" class="input-auth" required>
-            <label for="duration">Длительность:</label>
-            <input type="time" name="duration" id="" class="input-auth" required>
-            <label for="start-of-rental">Начало проката:</label>
-            <input type="date" name="start-of-rental" id="" class="input-auth" required>
-            <label for="download" class="download">Загрузить постер</label>
-            <input type="url" name="download" placeholder="Введите url постера" class="input-auth" required>
-            
+<?php
+    if($thanks == 1){
+?>
+    <p class="sucessfull-add"><?="Фильм успешно добавлен!"?></p>
+<?
+    }
+?>
 
-            <input type="button" value="Добавить" class="button-auth">
+
+
+    <div class="container-promo change">
+        <form action="php\add_film.php" method="POST">
+            <label for="name_film">Название:</label>
+            <input type="text" name="name_film" class="input-auth" required autofocus>
+            <label for="country">Страна:</label>
+            <input type="text" name="country" class="input-auth" required>
+            <label for="genre">Жанр:</label>
+            <input type="text" name="genre" class="input-auth" required>
+            <label for="director">Режиссер:</label>
+            <input type="text" name="director" class="input-auth" required>
+            <label for="scenario">Сценарий:</label>
+            <input type="text" name="scenario" class="input-auth" required>
+            <label for="cast">В ролях:</label>
+            <input type="text" name="cast" class="input-auth" required>
+            <label for="duration">Длительность:</label>
+            <input type="text" name="duration" class="input-auth" required>
+            <label for="start_of_rental">Начало проката:</label>
+            <input type="text" name="start_of_rental" class="input-auth" required>
+            <label for="about_film">О фильме:</label>
+            <input type="textarea" name="about_film" class="input-auth" required>
+            <label for="download" class="download">Загрузить постер</label>
+            <input type="url" name="download" placeholder="Введите URL постера" class="input-auth" required>
+            <label for="status">Статус фильма:</label>
+				<select name="status" class="input-auth">
+					<option value="1">В прокате</option>
+					<option value="2">Скоро выходят</option>
+				</select>
+
+            <input type="submit" value="Добавить" class="button-auth">
             
         </form>
     </div>

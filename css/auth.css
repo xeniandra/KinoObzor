@@ -256,6 +256,17 @@ a.to-reg:hover{
 }
 
 
+.sucessfull-add, .unsucessfull-add{
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+    color: green;
+    margin-top: 18px;
+    margin-bottom: 0;
+}
+.unsucessfull-add{
+    color: red;
+}
 /* кнопка наверх */
 .back_to_top {
     position: fixed;

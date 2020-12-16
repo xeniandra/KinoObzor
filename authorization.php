@@ -1,3 +1,8 @@
+<?php
+require_once "php\connection.php";
+$message = $_GET['message'];
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -31,13 +36,21 @@
     <div class="reelh">
         <h2>ВОЙТИ В УЧЕТНУЮ ЗАПИСЬ</h2>
     </div>
+
+<?php
+    if($message == 1){
+?>
+    <p class="unsucessfull-add"><?="Пользователя с такими данными не существует!"?></p>
+<?
+    }
+?>
     <div class="container-promo">
-        <form action="#">
+        <form action="php\authorization.php" method="POST">
             <label for="email">Email: </label>
             <input type="email" name="email" id="" placeholder="Введите email" class="input-auth" required autofocus>
             <label for="password">Пароль:</label>
             <input type="password" name="password" id="" placeholder="Введите пароль" class="input-auth" required>
-            <input type="button" value="Войти" class="button-auth">
+            <input type="submit" value="Войти" class="button-auth">
         </form>
         <a href="registration.php" class="to-reg">Нет аккаунта? Зарегистрируйтесь</a>
     </div>

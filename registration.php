@@ -1,3 +1,8 @@
+<?php
+require_once "php\connection.php";
+$message = $_GET['message'];
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\normalize.css">
     <link rel="stylesheet" href="css\auth.css">
-    <title>KinoObzor - Авторизация</title>
+    <title>KinoObzor - Регистрация</title>
     <link rel="shortcut icon" href="img\XMLID.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
@@ -31,17 +36,26 @@
     <div class="reelh">
         <h2>РЕГИСТРАЦИЯ</h2>
     </div>
+
+<?php
+    if($message == 1){
+?>
+    <p class="unsucessfull-add"><?="Пользователь с такими данными уже существует!"?></p>
+<?
+    }
+?>
+
     <div class="container-promo">
-        <form action="#">
+        <form action="php\registration.php" method="POST"> 
             <label for="email">Email: </label>
-            <input type="email" name="email" id="" placeholder="Введите email" class="input-auth" required autofocus>
+            <input type="email" name="email" placeholder="Введите email" class="input-auth" required autofocus>
             <label for="nick">Никнейм: </label>
-            <input type="text" name="nick" id="" placeholder="Введите никнейм" class="input-auth" required>
+            <input type="text" name="nick" placeholder="Введите никнейм" class="input-auth" required>
             <label for="password">Пароль: </label>
-            <input type="password" name="password" id="" placeholder="Введите пароль" class="input-auth" required>
-            <label for="password-repit">Повтор пароля: </label>
-            <input type="password" name="password-repit" id="" placeholder="Повторите пароль" class="input-auth" required>
-            <input type="button" value="Зарегистрироваться" class="button-auth">
+            <input type="password" name="password" id="password" placeholder="Введите пароль" class="input-auth" required>
+            <!-- <label for="password-repit">Повтор пароля: </label>
+            <input type="password" name="password-repit" id="password-repit" placeholder="Повторите пароль" class="input-auth" required> -->
+            <input type="submit" value="Зарегистрироваться" class="button-auth">
         </form>
         <a href="authorization.php" class="to-reg">Уже есть аккаунт? Авторизуйтесь</a>
     </div>
@@ -69,5 +83,24 @@
     </div>
 </footer>
 </div>
+<script>
+    
+//     while (document.getElementById('password').value != "") {
+        
+    
+//     if (document.getElementById('password').value == document.getElementById('password-repit').value) {
+//         document.getElementById('password').style.background='#18bf6a';
+//         document.getElementById('password-repit').style.background='#18bf6a';
+//     } 
+//     else {
+//         document.getElementById('password').style.background='#f96e6e';
+//         document.getElementById('password-repit').style.background='#f96e6e';
+//     }
+// }
+
+// background: #f96e6e; wrong
+// background: #18bf6a; write
+</script>
+
 </body>
 </html>

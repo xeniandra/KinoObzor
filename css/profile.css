@@ -225,6 +225,16 @@ img.film{
     width: 131px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+img.film:hover{
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
 p.review{
     font-size: 19px;
     line-height: 111.5%;
@@ -251,7 +261,7 @@ p.review{
     justify-content: space-between
 }
 
-button.full, button.del-review{
+button.full, a.del-review{
     background: #B32D36;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
@@ -259,10 +269,11 @@ button.full, button.del-review{
     border: none;
     color: #FFFFFF;
 }
-button.del-review{
+a.del-review{
     background: #3B3A3D;
+    text-decoration: none;
 }
-button.full:hover, button.del-review:hover, button.add:hover, button.del:hover{
+button.full:hover, a.del-review:hover, button.add:hover, button.del:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;

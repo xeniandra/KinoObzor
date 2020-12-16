@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once "php\connection.php";
+require_once "php\check_session.php";
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>

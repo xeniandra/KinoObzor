@@ -1,9 +1,11 @@
 <?php
+session_start();
 require_once "php\connection.php";
+
 $query = "SELECT `id_film`, `name_film`, `country`, `genre`, `director`, `scenario`, `cast`, `duration`,
  `start_of_rental`, `poster`, `about_film`, `id_status` FROM `films` WHERE `id_status` = 1";
 $query2 = "SELECT `id_film`, `name_film`, `country`, `genre`, `director`, `scenario`, `cast`, `duration`,
-`start_of_rental`, `poster`, `about_film`, `id_status` FROM `films` WHERE `id_status` = 2";                       
+`start_of_rental`, `poster`, `about_film`, `id_status` FROM `films` WHERE `id_status` = 2";
 ?>
 
 <!DOCTYPE html>

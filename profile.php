@@ -1,3 +1,29 @@
+<?php
+session_start();
+require_once "php\connection.php";
+require_once "php\check_session.php";
+
+$id_user = $_SESSION['id_user'];
+$queryUser = "SELECT `email`,`nick` FROM `user` WHERE `id_user` = '$id_user'";
+$resultSelectUser = mysqli_query($link, $queryUser);
+$SelectRowUser = mysqli_fetch_assoc($resultSelectUser);
+$email = $SelectRowUser['email'];
+$nick = $SelectRowUser['nick'];
+
+$queryReviewUserNumber = "SELECT `id_user` FROM `review` WHERE `id_user` = '$id_user'";
+$resultReviewsUserNumber = mysqli_query($link, $queryReviewUserNumber);
+$rowReviewsNumber = mysqli_num_rows($resultReviewsUserNumber);
+
+$queryReviewUser = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `review`.`id_status`, `status`, `name_film`, `poster`, `review`.`id_film` FROM `review`, `films`, `status_review` WHERE `id_user` = '$id_user' AND `review`.`id_film` = `films`.`id_film` AND `review`.`id_status` = `status_review`.`id_status`";
+
+$queryReviews = "SELECT `id_review` FROM `review` WHERE `id_status` = 3";
+$resultReviews = mysqli_query($link, $queryReviews);
+$rowReviews = mysqli_num_rows($resultReviews);
+if($_SESSION['role'] == 2){
+    $role = "АДМИНИСТРАТОР";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,7 +48,7 @@
                 <button class="button-search"></button>
             </form>
             </div>
-            <a href="authorization.php" class="login">
+            <a href="php\logout.php" class="login">
                 <img src="img\icon.svg" alt="icon" class="login">Выйти</a>
     </div>
 </header>
@@ -33,13 +59,25 @@
         <h2>ЛИЧНЫЙ КАБИНЕТ</h2>
     </div>
     <div class="container-promo profile">
-        <p class="profile">Email: ElenaK@mail.ru</p>
-        <p class="profile">Никнейм: ElenaK</p>
-        <p class="profile">Написано отзывов: 1</p>
-        <p class="profile">Входящих отзывов: 2</p>
+        <p class="profile">Email: <?=$email;?></p>
+        <p class="profile">Никнейм: <?=$role . ' ' . $nick;?></p>
+        <p class="profile">Написано отзывов: <?=$rowReviewsNumber;?></p>
+<?php
+if($_SESSION['role'] == 2){
+?>
+        <p class="profile">Входящих отзывов: <?=$rowReviews;?></p>
+<?
+}
+?>
         <div class="buttons">
+<?php
+if($_SESSION['role'] == 2){
+?>   
             <a href="add_film.php" class="change">Добавить фильм</a>
             <a href="users_review.php" class="change">Входящие отзывы</a>
+<?
+}
+?>
             <a href="change_profile.php" class="change">Редактировать профиль</a>
             <button class="change black" id="del-button">Удалить профиль</button>
         </div>
@@ -48,33 +86,49 @@
     <div class="reelh">
         <h2>МОИ ОТЗЫВЫ</h2>
     </div>
+
+<?php
+    $result = mysqli_query($link, $queryReviewUser);
+    while ($SelectRow = mysqli_fetch_assoc($result)) {
+        $id_review = $SelectRow['id_review'];
+        $text_review = $SelectRow['text_review'];
+        $date_review = $SelectRow['date_review'];
+        $timestamp = strtotime($date_review);
+        $date_review = date('H:i d.m.Y', $timestamp);
+        $status = $SelectRow['status'];
+        $name_film = $SelectRow['name_film'];
+        $poster = $SelectRow['poster'];
+        $queryfilm = "SELECT `id_film` FROM `review` WHERE `id_review` = '$id_review'";
+        $resultfilm = mysqli_query($link, $queryfilm);
+        $Selectfilm = mysqli_fetch_assoc($resultfilm);
+        $film = $Selectfilm['id_film'];
+?>
+
     <div class="review">
         
         <div class="film">
-            <img src="img\film.png" alt="Постер" class="film">
+            <a href="about_film.php?filmID=<?=$film;?>"><img src="<?=$poster;?>" alt="Постер" class="film" title="К фильму"></a>
             <ul class="film">
-                <li class="name-film">Взаперти</li>
-                <li class="date">22 ноября 2020 | 17:13</li>
-                <li class="status">Статус: Ожидает модерацию</li>
+                <li class="name-film"><?=$name_film;?></li>
+                <li class="date"><?=$date_review;?></li>
+                <li class="status">Статус: <?=$status;?></li>
             </ul>
            
         </div>
         <div class="my-rev">
-            <p class="review full-review">
-                Общее впечатление: Любая заботливая мать хочет только лучшего для своего ребенка. Именно такая мать-одиночка Диана Шерман (Сара Полсон) воспитывает дочь Хлою (Кира Ален) в полной изоляции, контролируя каждый её шаг. Та прикована к инвалидному креслу, принимает множество таблеток, обучается дома и не общается со сверстниками. Разумеется, Хлоя растет наивной девушкой, но однажды она начинает подозревать что-то неладное. <br>
-                Гиперзабота хорошо раскрыта в одном мини-сериале «Притворство», и безусловно общие черты с эти сериалом у данного фильма имеются. Мать так же пичкает дочь таблетками, не разрешает ей выходить одной на улицу, интернет только под присмотром. Чем вызвано желание оберегать? Об этом зрителю поверхностно говорят в начале, а уж ближе к финалу рассказывают страшную тайну. Есть к фильму вопросы, чисто по сюжету, но можно закрыть на них глаза, т. к. у триллера хорошая напряженная часть. Сюжет действительно держит у экрана, а саспенс пронизывает все повествование. Конечно, переживаешь за героиню, потому как есть такие моменты от которых становится страшно. Если вдуматься, такое действительно может быть, от этого и ужасно. <br>
-                Режиссер фильма Аниш Чаганти снял так же напряженный триллер «Поиск», вы наверняка видели его, если нет, рекомендую обратить внимание. Снят он необычно, но смотрится с интересом. Тогда в 2018 для Чаганти это был дебют, но пока что молодой режиссер не пробует себя в другом, за основу берется снова непростые отношения родители-дети и саспенс. «Взаперти» фокусируется на 2-х актрисах, конечно, это Сара Полсон с ролью сумасшедшей матери справляется великолепно, другого и быть не может. И Совсем неизвестная мне актриса — Кира Аллен. Кира так же показывает разнообразие эмоций, и страх, и удивление, и ненависть. <br>
-                Финал у ленты хорош. Закольцовывая сюжет зритель вспомнит одну пословицу — Что посеешь, то и пожнешь. Приятного просмотра! <br>
-                7 из 10
-            </p>
+            <p class="review full-review"><?=$text_review;?></p>
             <div class="buttons-rev">
                 <button class="full">Читать полностью</button>
-                <button class="del-review">Удалить</buton>    
+                <a href="php\del_review.php?reviewID=<?=$id_review;?>" class="del-review">Удалить</a>    
             </div>
-            </div>
+        </div>
         
     </div>
-    </div>
+<?
+    }
+?>
+
+</div>
 
  
 </main>

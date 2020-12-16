@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once "php\connection.php";
+
 $getId = $_GET['filmID'];
 $query = "SELECT `id_film`, `name_film`, `country`, `genre`, `director`, `scenario`, `cast`, `duration`,
  `start_of_rental`, `poster`, `about_film`, `id_status` FROM `films` WHERE `id_film` = '$getId'";
@@ -116,24 +118,35 @@ if ($row != 0) {
 ?>
     <div class="message">
             <p>К этому фильму пока нет ни одного отзыва. Вы можете стать первым!</p>
-    </div> -->
-    <?
+    </div>
+<?
         }
 ?>
         <div class="reelh">
             <h2>НАПИШИТЕ СВОЙ ОТЗЫВ</h2>
         </div>
+<?php
+if (empty($_SESSION['email'])) {
+?>
+        <div class="message">
+            <p>Оставлять отзывы могут только авторизованные пользователи!</p>
+        </div> 
+<?
+}
+else{
+?>
         <div class="my-review">
-            <form action="php\send_review.php" method="GET">
+            <form action="php\send_review.php" method="POST">
                 <textarea name="review" id="" cols="30" rows="10" placeholder="Введите текст..."></textarea>
-                <input type="hidden" value="1" name="id_user">
                 <input type="hidden" value="<?=$getId;?>" name="id_film">
                 <input type="submit" value="Отправить">
             </form>
         </div>
-        <!-- <div class="message">
-            <p>Оставлять отзывы могут только авторизованные пользователи!</p>
-        </div>     -->
+<?
+    }
+?>
+   
+
 </main>
 <!-- /.main -->
 <footer class="footer">
