@@ -2,6 +2,7 @@
 session_start();
 require_once "php\connection.php";
 require_once "php\check_session.php";
+$message = $_GET['message'];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -35,20 +36,27 @@ require_once "php\check_session.php";
 <main class="main">
 
     <div class="reelh">
-        <h2>ДАННЫЕ ПРОФИЛЯ</h2>
+        <h2>ИЗМЕНИТЬ ДАННЫЕ ПРОФИЛЯ</h2>
     </div>
+<?php
+    if($message == 1){
+?>
+    <p class="unsucessfull-add"><?="Пользователь с такими данными уже существует!"?></p>
+<?
+    }
+?>
     <div class="container-promo change">
-        <form action="#">
-            <label for="login">Email: </label>
-            <input type="text" name="login" id="" value="ElenaK@mail.ru" class="input-auth">
+        <form action="php\change_profile.php" method="POST">
+            <label for="email">Email: </label>
+            <input type="text" name="email" placeholder="Введите новый email" class="input-auth">
             <label for="nick">Никнейм: </label>
-            <input type="text" name="nick" id="" value="ElenaK" class="input-auth">
+            <input type="text" name="nick" placeholder="Введите новый никнейм" class="input-auth">
             <label for="password">Пароль:</label>
-            <input type="password" name="password" id="" value="************" class="input-auth">
+            <input type="password" name="password" placeholder="Введите новый пароль" class="input-auth">
             <div class="buttons">
-                <input type="button" value="Изменить" class="button-auth">
-                <a href="profile.php" class="button-auth black">Назад</a>
-            </div>
+            <input type="submit" value="Изменить" class="button-auth">
+            <a href="profile.php" class="button-auth black">Назад</a>
+    </div>
             
         </form>
     </div>

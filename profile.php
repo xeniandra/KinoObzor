@@ -9,16 +9,17 @@ $resultSelectUser = mysqli_query($link, $queryUser);
 $SelectRowUser = mysqli_fetch_assoc($resultSelectUser);
 $email = $SelectRowUser['email'];
 $nick = $SelectRowUser['nick'];
-
+// КОЛ-ВО ОТЗЫВОВ ПОЛЬЗОВАТЕЛЯ
 $queryReviewUserNumber = "SELECT `id_user` FROM `review` WHERE `id_user` = '$id_user'";
 $resultReviewsUserNumber = mysqli_query($link, $queryReviewUserNumber);
 $rowReviewsNumber = mysqli_num_rows($resultReviewsUserNumber);
-
+// 
 $queryReviewUser = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `review`.`id_status`, `status`, `name_film`, `poster`, `review`.`id_film` FROM `review`, `films`, `status_review` WHERE `id_user` = '$id_user' AND `review`.`id_film` = `films`.`id_film` AND `review`.`id_status` = `status_review`.`id_status`";
-
+// КОЛ-ВО ВХОДЯЩИХ ОТЗЫВОВ
 $queryReviews = "SELECT `id_review` FROM `review` WHERE `id_status` = 3";
 $resultReviews = mysqli_query($link, $queryReviews);
 $rowReviews = mysqli_num_rows($resultReviews);
+// 
 if($_SESSION['role'] == 2){
     $role = "АДМИНИСТРАТОР";
 }
@@ -88,6 +89,7 @@ if($_SESSION['role'] == 2){
     </div>
 
 <?php
+if ($rowReviewsNumber != 0) {
     $result = mysqli_query($link, $queryReviewUser);
     while ($SelectRow = mysqli_fetch_assoc($result)) {
         $id_review = $SelectRow['id_review'];
@@ -107,7 +109,7 @@ if($_SESSION['role'] == 2){
     <div class="review">
         
         <div class="film">
-            <a href="about_film.php?filmID=<?=$film;?>"><img src="<?=$poster;?>" alt="Постер" class="film" title="К фильму"></a>
+            <a href="about_film.php?filmID=<?=$film;?>"><img src="<?=$poster;?>" alt="Постер" class="film filmhov" title="К фильму"></a>
             <ul class="film">
                 <li class="name-film"><?=$name_film;?></li>
                 <li class="date"><?=$date_review;?></li>
@@ -126,7 +128,15 @@ if($_SESSION['role'] == 2){
     </div>
 <?
     }
-?>
+    }
+    else {
+        ?>
+            <div class="message">
+                    <p>У вас пока нет ни одного отзыва</p>
+            </div>
+        <?
+                }
+        ?>
 
 </div>
 
@@ -158,7 +168,7 @@ if($_SESSION['role'] == 2){
     <p class="mod">Вы действительно хотите 
         удалить профиль?</p>
     <div class="buttons-mod">
-    <button class="mod" id="yes">Да</button>
+    <a href="php\del_user.php" class="mod" id="yes">Да</a>
     <button class="mod" id="no">Нет</button>
     </div>
 </div>  

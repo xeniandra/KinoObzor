@@ -225,7 +225,7 @@ img.film{
     width: 131px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-img.film:hover{
+img.filmhov:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -273,7 +273,7 @@ a.del-review{
     background: #3B3A3D;
     text-decoration: none;
 }
-button.full:hover, a.del-review:hover, button.add:hover, button.del:hover{
+button.full:hover, a.del-review:hover, a.add:hover, a.del:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -290,20 +290,37 @@ form.form-review{
     justify-content: space-between;
 }
 
-button.add, button.del{
+a.add, a.del{
     background: #B32D36;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
-    padding: 1% 12%;
+    padding: 2% 12%;
     border: none;
     color: #FFFFFF;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
-button.del{
+a.del{
     background: #3B3A3D;
-    padding: 1% 12%;
+    /* padding: 1% 12%; */
 }
 
+.message{
+    padding: 0% 1%;
+    text-align: center;
+    font-weight: bold;
+    max-width: 798px;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 9px;
+    background: #F4F4F4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 21px;
+    margin-bottom: 0;
+}
 
 /* окно */
 .modal{
@@ -336,9 +353,9 @@ div.buttons-mod{
     width: 80%;
     justify-content: space-around;
 }
-button.mod{
+button.mod, a.mod{
     width: 186px;
-    height: 47px;   
+    padding: 2%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     border: none;
@@ -352,8 +369,9 @@ button.mod{
     text-align: center;
     letter-spacing: -0.01em;
     color: #FFFFFF;
+    text-decoration: none;
 }
-button.mod:hover{
+button.mod:hover, a.mod:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
