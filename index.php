@@ -71,10 +71,16 @@ $query2 = "SELECT `id_film`, `name_film`, `country`, `genre`, `director`, `scena
                             <img src="<?=$poster;?>" alt="<?=$name_film;?>">
                         </div>
                     </a>
-                    <!-- <div class="buttons-change">
+<?php
+    if($_SESSION['role'] == 2){
+?>
+                    <div class="buttons-change">
                         <a href="change_film.php?filmID=<?=$id_film;?>" class="change">Редактировать</a>
-                        <a href="delete_film.php?filmID=<?=$id_film;?>" class="del">Удалить</a>  
-                    </div> -->
+                        <a href="php\archieve_film.php?filmID=<?=$id_film;?>" class="del">В архив</a>  
+                    </div>
+<?
+    }
+?>
                 </div>
 
 <?
@@ -106,10 +112,16 @@ $query2 = "SELECT `id_film`, `name_film`, `country`, `genre`, `director`, `scena
                             <img src="<?=$poster;?>" alt="<?=$name_film;?>">
                         </div>
                     </a>
-                    <!-- <div class="buttons-change">
+<?php
+    if($_SESSION['role'] == 2){
+?>
+                    <div class="buttons-change">
                         <a href="change_film.php?filmID=<?=$id_film;?>" class="change">Редактировать</a>
-                        <a href="delete_film.php?filmID=<?=$id_film;?>" class="del">Удалить</a>  
-                    </div> -->
+                        <a href="php\archieve_film.php?filmID=<?=$id_film;?>" class="del">В архив</a>  
+                    </div>
+ <?
+        }
+?>
                 </div>
 
 <?
