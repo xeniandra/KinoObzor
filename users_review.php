@@ -2,7 +2,11 @@
 session_start();
 require_once "php\connection.php";
 require_once "php\check_session.php";
-
+// КОЛ-ВО ВХОДЯЩИХ ОТЗЫВОВ
+$queryReviews = "SELECT `id_review` FROM `review` WHERE `id_status` = 3";
+$resultReviews = mysqli_query($link, $queryReviews);
+$rowReviews = mysqli_num_rows($resultReviews);
+//
 $queryReviewsShow = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `id_status`, `id_film` FROM `review` WHERE `id_status` = 3";
 ?>
 <!DOCTYPE html>
@@ -24,9 +28,9 @@ $queryReviewsShow = "SELECT `id_review`, `id_user`, `date_review`, `text_review`
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
             <div class="search search-change">
-                <form action="#">
-                <input type="text" class="input-search" placeholder="Введите название фильма...">
-                <button class="button-search"></button>
+            <form action="search.php" method="POST">
+                <input type="text" name="search" class="input-search" placeholder="Введите название фильма...">
+                <button type="submit" class="button-search"></button>
             </form>
             </div>
             <a href="profile.php" class="login">
@@ -41,6 +45,7 @@ $queryReviewsShow = "SELECT `id_review`, `id_user`, `date_review`, `text_review`
     </div>
 
 <?php
+if ($rowReviews != 0) {
 $result = mysqli_query($link, $queryReviewsShow);
 while ($SelectRow = mysqli_fetch_assoc($result)) {
     $id_review = $SelectRow['id_review'];
@@ -87,7 +92,16 @@ while ($SelectRow = mysqli_fetch_assoc($result)) {
  
 <?
     }
-?>
+}
+else {
+    ?>
+        <div class="mess">
+                <p>Пока нет отзывов на модерацию</p>
+        </div>
+    <?
+            }
+    ?>
+
 
     </div>
  
@@ -114,14 +128,6 @@ while ($SelectRow = mysqli_fetch_assoc($result)) {
 
 
 
-<div class="modal">
-    <p class="mod">Вы действительно хотите 
-        удалить профиль?</p>
-    <div class="buttons-mod">
-    <button class="mod" id="yes">Да</button>
-    <button class="mod" id="no">Нет</button>
-    </div>
-</div>  
 <!-- кнопка наверх -->
 <a class="back_to_top" title="Наверх">↑</a>
 <script src="js\to_top.js"></script>

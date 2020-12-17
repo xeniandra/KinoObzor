@@ -46,9 +46,9 @@ $row = mysqli_num_rows($resultReview);
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
             <div class="search">
-                <form action="#">
-                <input type="text" class="input-search" placeholder="Введите название фильма...">
-                <button class="button-search"></button>
+            <form action="search.php" method="POST">
+                <input type="text" name="search" class="input-search" placeholder="Введите название фильма...">
+                <button type="submit" class="button-search"></button>
             </form>
         </div>
             <a href="profile.php" class="login">

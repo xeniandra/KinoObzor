@@ -1,8 +1,18 @@
 <?php
 session_start();
 require_once "php\connection.php";
-require_once "php\check_session.php";
-$message = $_GET['message'];
+$search = $_POST['search'];
+if($search)
+{   
+  $search = $_POST['search'];
+  $search = preg_replace('/ /', '', $search);
+  $query = "SELECT `id_film`, `name_film`, `genre`, `cast`, `poster`, `country`,`start_of_rental` FROM `films` 
+  WHERE concat(`name_film`, `genre`, `cast`, `director`, `country`) LIKE '%$search%'";
+
+  if (mysqli_num_rows(mysqli_query($link, $query)) <= 0){
+      $noResults = 1;
+  }  
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -10,8 +20,8 @@ $message = $_GET['message'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\normalize.css">
-    <link rel="stylesheet" href="css\auth.css">
-    <title>KinoObzor - Изменение профиля</title>
+    <link rel="stylesheet" href="css\profile.css">
+    <title>KinoObzor - Поиск фильмов</title>
     <link rel="shortcut icon" href="img\XMLID.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
@@ -23,7 +33,7 @@ $message = $_GET['message'];
                 <img src="img\logo.svg" alt="Logo" class="logo">
             </a>
             <div class="search search-change">
-            <form action="search.php" method="POST">
+                <form action="search.php" method="POST">
                 <input type="text" name="search" class="input-search" placeholder="Введите название фильма...">
                 <button type="submit" class="button-search"></button>
             </form>
@@ -36,33 +46,48 @@ $message = $_GET['message'];
 <main class="main">
 
     <div class="reelh">
-        <h2>ИЗМЕНИТЬ ДАННЫЕ ПРОФИЛЯ</h2>
+        <h2>ПОИСК ФИЛЬМОВ</h2>
     </div>
 <?php
-    if($message == 1){
+    if (mysqli_num_rows(mysqli_query($link, $query)) > 0) {
+    $resultFilm = mysqli_query($link, $query);
+    while ($SelectFilm = mysqli_fetch_assoc($resultFilm)) {
+        $id_film = $SelectFilm['id_film'];
+        $name_film = $SelectFilm['name_film'];
+        $genre = $SelectFilm['genre'];
+        $poster = $SelectFilm['poster'];
+        $start_of_rental = $SelectFilm['start_of_rental'];
+        $country = $SelectFilm['country'];
+        $cast = strpos($SelectFilm['cast'], ' ', 100);
+        $cast =  substr($SelectFilm['cast'], $cast);
 ?>
-    <p class="unsucessfull-add"><?="Пользователь с такими данными уже существует!"?></p>
+ 
+    <div class="search-film">
+        <div class="film">
+        <a href="about_film.php?filmID=<?=$id_film;?>" class="search-film" title="К фильму"> <img src="<?=$poster;?>" alt="<?=$name_film;?>" class="film"></a>
+            <ul class="film">
+                <li class="li-film">Фильм: <?=$name_film;?></li>
+                <li class="li-film">Жанр: <?=$genre;?></li>
+                <li class="li-film">Страна: <?=$country;?></li>
+                <li class="li-film">В ролях: <?=$cast;?></li>
+                <li class="li-film">Начало проката: <?=$start_of_rental;?></li>
+            </ul>
+        </div>
+    </div>
 <?
+        }
     }
+    else {
 ?>
-    <div class="container-promo change">
-        <form action="php\change_profile.php" method="POST">
-            <label for="email">Email: </label>
-            <input type="text" name="email" placeholder="Введите новый email" class="input-auth">
-            <label for="nick">Никнейм: </label>
-            <input type="text" name="nick" placeholder="Введите новый никнейм" class="input-auth">
-            <label for="password">Пароль:</label>
-            <input type="password" name="password" placeholder="Введите новый пароль" class="input-auth">
-            <div class="buttons">
-            <input type="submit" value="Изменить" class="button-auth">
-            <a href="profile.php" class="button-auth black">Назад</a>
+    <div class="mess">
+            <p>Фильм не найден, попробуйте еще</p>
     </div>
-            
-        </form>
-    </div>
+<?
+        }
+?>
 
 
-
+ </div>
  
 </main>
 <!-- /.main -->
@@ -84,6 +109,9 @@ $message = $_GET['message'];
     </div>
 </footer>
 </div>
+
+
+
 <!-- кнопка наверх -->
 <a class="back_to_top" title="Наверх">↑</a>
 <script src="js\to_top.js"></script>

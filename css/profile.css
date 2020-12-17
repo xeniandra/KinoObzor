@@ -192,7 +192,7 @@ a.change:hover, button.change:hover{
 }
 
 
-div.review{
+div.review, div.search-film{
     display: flex;
     margin: 3% auto;
     padding: 0% 3%;
@@ -205,6 +205,9 @@ div.review{
     border-radius: 9px;
 }
 
+div.search-film{
+    padding-bottom: 1%;
+}
 div.film{
     display: flex;
 }
@@ -217,9 +220,10 @@ ul{
 }
 li{
     font-size: 22px;
-    /* padding-bottom: 13%; */
     padding-bottom: 5%;
-
+}
+li.li-film{
+    padding-bottom: 1%;
 }
 img.film{
     width: 131px;
@@ -273,7 +277,7 @@ a.del-review{
     background: #3B3A3D;
     text-decoration: none;
 }
-button.full:hover, a.del-review:hover, a.add:hover, a.del:hover{
+button.full:hover, a.del-review:hover, a.add:hover, a.del:hover, a.search-film:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -307,7 +311,7 @@ a.del{
     /* padding: 1% 12%; */
 }
 
-.message{
+.message, .mess{
     padding: 0% 1%;
     text-align: center;
     font-weight: bold;
@@ -321,6 +325,10 @@ a.del{
     font-size: 21px;
     margin-bottom: 0;
 }
+.mess{
+    padding: 12% 2%;
+}
+
 
 /* окно */
 .modal{
