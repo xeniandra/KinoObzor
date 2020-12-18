@@ -445,3 +445,11 @@ a.social-link:hover{
         font-size: 15px;
       }
 }
+
+@media (max-width: 740px){
+    .films-one {
+        grid-gap: 37px 155px;
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+}
