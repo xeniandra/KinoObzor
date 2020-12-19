@@ -4,7 +4,7 @@ require_once "php\connection.php";
 
 $getId = $_GET['filmID'];
 $query = "SELECT `id_film`, `name_film`, `country`, `genre`, `director`, `scenario`, `cast`, `duration`,
- `start_of_rental`, `poster`, `about_film`, `id_status` FROM `films` WHERE `id_film` = '$getId'";
+`start_of_rental`, `poster`, `about_film`, `id_status` FROM `films` WHERE `id_film` = '$getId'";
 $resultSelect = mysqli_query($link, $query);
 $SelectRow = mysqli_fetch_assoc($resultSelect);
 
@@ -39,116 +39,107 @@ $row = mysqli_num_rows($resultReview);
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <div class="page">
     <header class="header">
-    <div class="container">
-            <a href="index.php" class="logo" title="На главную">
-                <img src="img\logo.svg" alt="Logo" class="logo">
-            </a>
-            <div class="search">
-            <form action="search.php" method="POST">
-                <input type="text" name="search" class="input-search" placeholder="Введите название фильма...">
-                <button type="submit" class="button-search"></button>
-            </form>
-        </div>
-            <a href="profile.php" class="login">
-                <img src="img\icon.svg" alt="icon" class="login">Профиль</a>
-    </div>
-</header>
-    <!-- /.header -->
-<main class="main">
-    <div class="container-promo">
-        <section class="promo">
-            <img src="<?=$poster;?>" alt="<?=$name_film;?>" class="film">
-            <div class="about_film">
-                <h3><?=$name_film;?></h3>
-                <ul>
-                    <li>Страна: <?=$country;?></li>
-                    <li>Жанр: <?=$genre;?></li>
-                    <li>Режиссер: <?=$director;?></li>
-                    <li>Сценарий: <?=$scenario;?></li>
-                    <li>В ролях: <?=$cast;?></li>
-                    <li>Длительность: <?=$duration;?></li>
-                </ul>
-                <p class="date">Начало проката: <?=$start_of_rental;?></p>
+        <div class="container">
+                <a href="index.php" class="logo" title="На главную">
+                    <img src="img\logo.svg" alt="Logo" class="logo">
+                </a>
+                <div class="search">
+                <form action="search.php" method="POST">
+                    <input type="text" name="search" class="input-search" placeholder="Введите название фильма..." required>
+                    <button type="submit" class="button-search"></button>
+                </form>
             </div>
-        </section>
-    </div>
-    <div class="reelh">
-        <h2>О ФИЛЬМЕ</h2>
-    </div>
-    <div class="container-about">
-        <p class="about"><?=$about_film;?></p>
-    </div>
-    <div class="reelh">
-        <h2>ОТЗЫВЫ</h2>
-    </div>
-
-<?php
-if ($row != 0) {
-    $resultReviews = mysqli_query($link, $queryReviews);
-    while ($SelectRow = mysqli_fetch_assoc($resultReviews)) {
-        $id_review = $SelectRow['id_review'];
-        $id_film = $SelectRow['id_film'];
-        $id_status = $SelectRow['id_status'];   
-        $date_review = $SelectRow['date_review'];
-        $timestamp = strtotime($date_review);
-        $date_review = date('H:i d.m.Y', $timestamp);
-        $text_review = $SelectRow['text_review'];
-        $id_user = $SelectRow['id_user'];
-
-        $queryUser = "SELECT `nick` FROM `user` WHERE `id_user` = '$id_user'";
-        $resultSelectUser = mysqli_query($link, $queryUser);
-        $SelectRowUser  = mysqli_fetch_assoc($resultSelectUser);
-        $user_nick = $SelectRowUser['nick'];
-?>
-
-    <div class="review">
-        <ul>
-            <li class="author"><?=$user_nick;?></li>
-            <li class="date-review"><?=$date_review;?></li>
-        </ul>
-        <p class="review"><?=$text_review;?></p>
-    </div>
-
-<?
-        }
-    }
-    else {
-?>
-    <div class="message">
-            <p>К этому фильму пока нет ни одного отзыва. Вы можете стать первым!</p>
-    </div>
-<?
-        }
-?>
+                <a href="profile.php" class="login">
+                    <img src="img\icon.svg" alt="icon" class="login">Профиль</a>
+        </div>
+    </header>
+    <!-- /.header -->
+    <main class="main">
+        <div class="container-promo">
+                <img src="<?=$poster;?>" alt="<?=$name_film;?>" class="film">
+                <div class="about_film">
+                    <h3><?=$name_film;?></h3>
+                    <ul>
+                        <li>Страна: <?=$country;?></li>
+                        <li>Жанр: <?=$genre;?></li>
+                        <li>Режиссер: <?=$director;?></li>
+                        <li>Сценарий: <?=$scenario;?></li>
+                        <li>В ролях: <?=$cast;?></li>
+                        <li>Длительность: <?=$duration;?></li>
+                    </ul>
+                    <p class="date">Начало проката: <?=$start_of_rental;?></p>
+                </div>
+        </div>
         <div class="reelh">
-            <h2>НАПИШИТЕ СВОЙ ОТЗЫВ</h2>
+            <h2>О ФИЛЬМЕ</h2>
         </div>
-<?php
-if (empty($_SESSION['email'])) {
-?>
-        <div class="message">
-            <p>Оставлять отзывы могут только авторизованные пользователи!</p>
-        </div> 
-<?
-}
-else{
-?>
-        <div class="my-review">
-            <form action="php\send_review.php" method="POST">
-                <textarea name="review" id="" cols="30" rows="10" placeholder="Введите текст..."></textarea>
-                <input type="hidden" value="<?=$getId;?>" name="id_film">
-                <input type="submit" value="Отправить">
-            </form>
+        <div class="container-about">
+            <p class="about"><?=$about_film;?></p>
         </div>
-<?
-    }
-?>
-   
+        <div class="reelh">
+            <h2>ОТЗЫВЫ</h2>
+        </div>
 
-</main>
-<!-- /.main -->
+    <?php
+    if ($row != 0) {
+        $resultReviews = mysqli_query($link, $queryReviews);
+        while ($SelectRow = mysqli_fetch_assoc($resultReviews)) {
+            $id_review = $SelectRow['id_review'];
+            $id_film = $SelectRow['id_film'];
+            $id_status = $SelectRow['id_status'];   
+            $date_review = $SelectRow['date_review'];
+            $timestamp = strtotime($date_review);
+            $date_review = date('H:i d.m.Y', $timestamp);
+            $text_review = $SelectRow['text_review'];
+            $id_user = $SelectRow['id_user'];
+
+            $queryUser = "SELECT `nick` FROM `user` WHERE `id_user` = '$id_user'";
+            $resultSelectUser = mysqli_query($link, $queryUser);
+            $SelectRowUser  = mysqli_fetch_assoc($resultSelectUser);
+            $user_nick = $SelectRowUser['nick'];
+    ?>
+
+        <div class="review">
+            <ul>
+                <li class="author"><?=$user_nick;?></li>
+                <li class="date-review"><?=$date_review;?></li>
+            </ul>
+            <p class="review"><?=$text_review;?></p>
+        </div>
+
+        <?
+        }
+    }
+            else {
+        ?>
+            <div class="message">
+                    <p class="message">К этому фильму пока нет ни одного отзыва. Вы можете стать первым!</p>
+            </div>
+        <?}?>
+            <div class="reelh">
+                <h2>НАПИШИТЕ СВОЙ ОТЗЫВ</h2>
+            </div>
+        <?php
+        if (empty($_SESSION['email'])) {
+        ?>
+            <div class="message">
+                <p class="message">Оставлять отзывы могут только авторизованные пользователи!</p>
+            </div> 
+        <?
+        }
+        else{
+        ?>
+            <div class="my-review">
+                <form action="php\send_review.php" method="POST">
+                    <textarea name="review" id="textarea-comment" cols="30" rows="10" placeholder="Введите текст..."></textarea>
+                    <input type="hidden" value="<?=$getId;?>" name="id_film">
+                    <input type="submit" value="Отправить">
+                </form>
+            </div>
+        <?}?>
+
+    </main>
 <footer class="footer">
     <div class="reel"></div>
     <div class="container">
@@ -166,7 +157,7 @@ else{
         </div>
     </div>
 </footer>
-</div>
+
 <!-- кнопка наверх -->
 <a class="back_to_top" title="Наверх">↑</a>
 <script src="js\to_top.js"></script>

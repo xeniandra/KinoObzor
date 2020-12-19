@@ -25,7 +25,7 @@ $thanks = $_GET['thanks'];
             </a>
             <div class="search search-change">
             <form action="search.php" method="POST">
-                <input type="text" name="search" class="input-search" placeholder="Введите название фильма...">
+                <input type="text" name="search" class="input-search" placeholder="Введите название фильма..." required>
                 <button type="submit" class="button-search"></button>
             </form>
             </div>
