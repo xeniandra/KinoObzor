@@ -46,7 +46,7 @@ $row = mysqli_num_rows($resultReview);
                 </a>
                 <div class="search">
                 <form action="search.php" method="POST">
-                    <input type="text" name="search" class="input-search" placeholder="Введите название фильма..." required>
+                    <input type="text" name="search" class="input-search" placeholder="Введите название фильма, жанр, имена актеров..." required>
                     <button type="submit" class="button-search"></button>
                 </form>
             </div>

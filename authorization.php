@@ -23,7 +23,7 @@ $message = $_GET['message'];
             </a>
             <div class="search">
                 <form action="#">
-                <input type="text" class="input-search" placeholder="Введите название фильма..." required>
+                <input type="text" class="input-search" placeholder="Введите название фильма, жанр, имена актеров..." required>
                 <button class="button-search"></button>
             </form>
             </div>

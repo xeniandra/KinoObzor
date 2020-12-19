@@ -67,7 +67,7 @@ input.input-search:hover, input.input-search:focus{
     line-height: 1.3;
     letter-spacing: -0.01em;
     text-align: left;
-    padding-left: 25px;
+    padding-left: 1%;
     color: rgba(255, 255, 255, 0.699999988079071);
 }
 
@@ -316,16 +316,16 @@ p.message{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
     border-radius: 9px;
     font-size: 37px;
-  }
+}
   
-  .back_to_top:hover {
+.back_to_top:hover {
     background: #e9ebec;
     color: rgb(0 0 0 / 36%);
-  }
+}
   
-  .back_to_top-show {
+.back_to_top-show {
     display: block;
-  }
+}
 /* кнопка наверх */
 
 
@@ -413,16 +413,18 @@ a.social-link:hover{
     
 }
 
-
 @media (max-width: 1108px){
     .container{
         max-width: 881px;
-        margin: 0 auto
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
     }    
     .container-promo, .container-about, div.about_film {
         max-width: 1043px;
         margin: 0 auto;
         flex-direction: column;
+        justify-content: center;
     }
     .container-about{
         margin: 3%;

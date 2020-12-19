@@ -56,22 +56,23 @@ input.input-search{
     background: linear-gradient(180deg, #411a1a 0%, rgba(255, 255, 255, 0.08) 99.97%, #ffbbc0 99.98%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px 0px 0px 9px;
-}
-input.input-search:hover, input.input-search:focus{
-    background: rgba(255, 255, 255, 0.699999988079071);
-    background-color: white;
     border: none;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+input.input-search:hover, input.input-search:focus{
+    background: rgba(255, 255, 255, 0.699999988079071);
+    background-color: white;
+
+}
 
 
 .search ::placeholder {
     height: 37px;
     text-align: left;
-    padding-left: 25px;
+    padding-left: 1%;
     color: rgba(255, 255, 255, 0.699999988079071);
   }
  
@@ -86,13 +87,6 @@ input.input-search:hover, input.input-search:focus{
     background-repeat: no-repeat;
     background-position: center;
 }
-.button-search:hover{
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
 
 a.login{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -104,15 +98,15 @@ a.login{
     height: 40px;
     text-decoration: none;
     color: black;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 a.login:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 a.login img {
     margin-right: 4px;
@@ -174,6 +168,11 @@ a.change, button.change{
     width: 63%;
     border: none;
     margin-bottom: 4%;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 button.black{
@@ -181,11 +180,6 @@ button.black{
 }
 
 a.change:hover, button.change:hover{
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -229,12 +223,16 @@ img.film{
     width: 131px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-img.filmhov:hover{
+
+img.filmhov{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+
+img.filmhov:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -272,17 +270,24 @@ button.full, a.del-review{
     padding: 1% 4%;
     border: none;
     color: #FFFFFF;
-}
-a.del-review{
-    background: #3B3A3D;
-    text-decoration: none;
-}
-button.full:hover, a.del-review:hover, a.add:hover, a.del:hover, a.search-film:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+a.del-review{
+    background: #3B3A3D;
+    text-decoration: none;
+}
+a.search-film{
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+button.full:hover, a.del-review:hover, a.add:hover, a.del:hover, a.search-film:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -304,6 +309,11 @@ a.add, a.del{
     text-decoration: none;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 a.del{
@@ -378,13 +388,13 @@ button.mod, a.mod{
     letter-spacing: -0.01em;
     color: #FFFFFF;
     text-decoration: none;
-}
-button.mod:hover, a.mod:hover{
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+button.mod:hover, a.mod:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -411,16 +421,16 @@ button.mod:hover, a.mod:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
     border-radius: 9px;
     font-size: 37px;
-  }
-  
-  .back_to_top:hover {
+}
+
+.back_to_top:hover {
     background: #e9ebec;
     color: rgb(0 0 0 / 36%);
-  }
-  
-  .back_to_top-show {
+}
+
+.back_to_top-show {
     display: block;
-  }
+}
 /* кнопка наверх */
 
 
@@ -456,16 +466,16 @@ div.social-links{
 }
 a.social-link{
     margin: 0px 8px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 a.social-link:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 
 @media (max-width: 1366px){
@@ -488,7 +498,9 @@ a.social-link:hover{
 @media (max-width: 1108px){
     .container{
         max-width: 1043px;
-        margin: 0 auto
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
     }    
     .container-promo {
         max-width: 1043px;
@@ -496,9 +508,8 @@ a.social-link:hover{
     }
     .search{
         display: flex;
-        /* width: 100%; */
-        width: 81%;
-        
+        width: 73%;
+        margin: 1% 0%;
     }
     p {
         font-size: 20px;
@@ -526,11 +537,11 @@ a.social-link:hover{
     ::placeholder {
         height: 30px;
         font-size: 15px;
-      }
-      a.change, button.change, p.profile{
+    }
+    a.change, button.change, p.profile{
         font-size: 18px;
         padding: 1% 3%;
-      }
+    }
 
 }
 
@@ -538,9 +549,9 @@ a.social-link:hover{
 @media (max-width: 540px){
     h2{
         font-size: 25px;
-      }
-      li{
+    }
+    li{
         font-size: 16px;
         padding-bottom: 2%;
-      }
+    }
 }

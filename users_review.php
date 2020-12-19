@@ -29,7 +29,7 @@ $queryReviewsShow = "SELECT `id_review`, `id_user`, `date_review`, `text_review`
             </a>
             <div class="search search-change">
             <form action="search.php" method="POST">
-                <input type="text" name="search" class="input-search" placeholder="Введите название фильма..." required>
+                <input type="text" name="search" class="input-search" placeholder="Введите название фильма, жанр, имена актеров..." required>
                 <button type="submit" class="button-search"></button>
             </form>
             </div>
