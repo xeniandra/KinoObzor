@@ -1,27 +1,29 @@
 * {
     box-sizing: border-box;
 }
+
 body{
     font-family: 'Roboto', sans-serif;
-}
-div.page{
-    max-width: 1440px;
-    margin: 0 auto
 }
 header{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background: #b32d36;
     padding: 5px 0px;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 .container, .container-promo{
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
-a.logo {
+
+a.logo, form{
     display: flex;
 }
 .search{
@@ -30,9 +32,7 @@ a.logo {
     width: 61%;
     
 }
-form{
-    display: flex;
-}
+
 input.input-search{
     width: 697px;
     height: 40px;
@@ -40,15 +40,15 @@ input.input-search{
     background: linear-gradient(180deg, #411a1a 0%, rgba(255, 255, 255, 0.08) 99.97%, #ffbbc0 99.98%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px 0px 0px 9px;
-}
-input.input-search:hover, input.input-search:focus{
-    background: rgba(255, 255, 255, 0.699999988079071);
-    background-color: white;
-    border: none;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+
+}
+input.input-search:hover, input.input-search:focus{
+    background: rgba(255, 255, 255, 0.699999988079071);
+    background-color: white;
 }
 
 
@@ -63,7 +63,7 @@ input.input-search:hover, input.input-search:focus{
     text-align: left;
     padding-left: 25px;
     color: rgba(255, 255, 255, 0.699999988079071);
-  }
+}
 
 .button-search{
     width: 58px;
@@ -75,14 +75,9 @@ input.input-search:hover, input.input-search:focus{
     background-image: url(../img/glass.svg);
     background-repeat: no-repeat;
     background-position: center;
-}
-.button-search:hover{
     cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
+
 a.login{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 5px 13px;
@@ -91,17 +86,15 @@ a.login{
     display: flex;
     align-items: center;
     height: 40px;
-    text-decoration: none;
-    color: black;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 a.login:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 a.login img {
     margin-right: 4px;
@@ -114,6 +107,7 @@ main{
 .container-promo{
     padding-top: 41px;
     padding-bottom: 52px;
+    justify-content: center;
 }
 .promo {
     width: 100%;
@@ -122,7 +116,7 @@ main{
     border-radius: 10px;
     padding: 35px 70px;
 }
-.promo-title{
+.promo-title, .promo-text{
     font-style: normal;
     font-weight: bold;
     font-size: 39px;
@@ -131,15 +125,13 @@ main{
 }
 .promo-text{
     max-width: 554px;
-    font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
-    color: #302C34;
 }
 .films-today{
     background-image: url(../img/reel.png);
-    background-repeat-y: no-repeat;
+    background-repeat: repeat-x;
     height: 70px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -155,7 +147,7 @@ h2{
 }
 
 a.filmframe{
-    text-decoration: none;
+    display: flex;
 }
 
 
@@ -174,19 +166,19 @@ a.filmframe{
 h3{
     height: 63px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 130%;
-/* or 29px */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 130%;
+    /* or 29px */
 
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.01em;
 
-color: #000000;
+    color: #000000;
 
 }
 div.buttons-change{
@@ -201,7 +193,11 @@ a.change, a.del{
     border-radius: 9px;
     color: white;
     padding: 3% 15%;
-    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 a.del{
     background: #3B3A3D;
@@ -209,11 +205,6 @@ a.del{
     margin-top: 5%;
 }
 a.change:hover, a.del:hover{
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -222,18 +213,19 @@ div.film{
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 244px;
+    width: 100%;
     opacity: 1;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 div.film:hover{
     opacity: 0.8;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+
 }
 
 .film img{
@@ -250,13 +242,14 @@ div.film:hover{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 33px 74px;
+    width: 100%;
 }
 footer{
     background: #b32d36;
 }
 div.reel{
     background-image: url(../img/lenta.png);
-    background-repeat-y: no-repeat;
+    background-repeat: repeat-x;
     height: 25px;
 }
 footer img.popfoot{
@@ -281,16 +274,16 @@ div.social-links{
 }
 a.social-link{
     margin: 0px 8px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 a.social-link:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 
 /* кнопка наверх */
@@ -311,16 +304,16 @@ a.social-link:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
     border-radius: 9px;
     font-size: 37px;
-  }
-  
-  .back_to_top:hover {
+}
+
+.back_to_top:hover {
     background: #e9ebec;
     color: rgb(0 0 0 / 36%);
-  }
-  
-  .back_to_top-show {
+}
+
+.back_to_top-show {
     display: block;
-  }
+}
 /* кнопка наверх */
 
 @media (max-width: 1366px){
@@ -379,7 +372,7 @@ a.social-link:hover{
     }
     .promo-title{
         font-size: 33px;
-        line-height: 43px;s
+        line-height: 43px;
     }
     .promo-text {
         max-width: 519px;
@@ -417,9 +410,6 @@ a.social-link:hover{
         max-width: 700px;
         margin: 0 auto
     }
-    div.film {
-        width: 280px;
-    }
     .promo-title{
         font-size: 22px;
         line-height: 43px;
@@ -440,10 +430,10 @@ a.social-link:hover{
     ::placeholder {
         height: 30px;
         font-size: 15px;
-      }
-      a.login{
+    }
+    a.login{
         font-size: 15px;
-      }
+    }
 }
 
 @media (max-width: 740px){

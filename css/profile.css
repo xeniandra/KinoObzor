@@ -126,7 +126,7 @@ main{
 }
 .reelh{
     background-image: url(../img/reel.png);
-    background-repeat-y: no-repeat;
+    background-repeat: repeat-x;
     height: 70px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -430,7 +430,7 @@ footer{
 }
 div.reel{
     background-image: url(../img/lenta.png);
-    background-repeat-y: no-repeat;
+    background-repeat: repeat-x;
     height: 25px;
 }
 footer img.popfoot{
@@ -476,11 +476,7 @@ a.social-link:hover{
     }
     input.input-search {
         width: 84%;
-    }
-    .container-promo {
-        /* max-width: 1150px;
-        margin: 0 auto */
-    }    
+    }   
     .social-link img{
         width: 44px;
         height: 44px;
