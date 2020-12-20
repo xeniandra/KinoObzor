@@ -15,7 +15,6 @@ $message = $_GET['message'];
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <div class="page">
     <header class="header">
     <div class="container">
             <a href="index.php" class="logo" title="На главную">
@@ -82,7 +81,6 @@ $message = $_GET['message'];
         </div>
     </div>
 </footer>
-</div>
 <script>
     
 //     while (document.getElementById('password').value != "") {

@@ -17,7 +17,6 @@ $thanks = $_GET['thanks'];
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <div class="page">
     <header class="header">
     <div class="container">
             <a href="index.php" class="logo" title="На главную">
@@ -104,7 +103,6 @@ $thanks = $_GET['thanks'];
         </div>
     </div>
 </footer>
-</div>
 <!-- кнопка наверх -->
 <a class="back_to_top" title="Наверх">↑</a>
 <script src="js\to_top.js"></script>

@@ -21,7 +21,6 @@ $queryReviewsShow = "SELECT `id_review`, `id_user`, `date_review`, `text_review`
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <div class="page">
     <header class="header">
     <div class="container">
             <a href="index.php" class="logo" title="На главную">
@@ -103,7 +102,6 @@ else {
     ?>
 
 
-    </div>
  
 </main>
 <!-- /.main -->
@@ -124,7 +122,6 @@ else {
         </div>
     </div>
 </footer>
-</div>
 
 
 

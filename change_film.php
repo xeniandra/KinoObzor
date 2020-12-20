@@ -34,7 +34,6 @@ $id_status = $SelectRow['id_status'];
 </head>
 <body>
     <div class="page">
-    <header class="header">
     <div class="container">
             <a href="index.php" class="logo" title="На главную">
                 <img src="img\logo.svg" alt="Logo" class="logo">
@@ -110,7 +109,6 @@ $id_status = $SelectRow['id_status'];
         </div>
     </div>
 </footer>
-</div>
 <!-- кнопка наверх -->
 <a class="back_to_top" title="Наверх">↑</a>
 <script src="js\to_top.js"></script>

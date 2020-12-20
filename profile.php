@@ -37,7 +37,18 @@ if($_SESSION['role'] == 2){
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <div class="page">
+<div class="modal-container">
+        
+        <div class="modal">
+            <p class="mod">Вы действительно хотите 
+                удалить профиль?</p>
+            <div class="buttons-mod">
+            <a href="php\del_user.php" class="mod" id="yes">Да</a>
+            <button class="mod" id="no">Нет</button>
+            </div>
+        </div> 
+
+    </div>
     <header class="header">
     <div class="container">
             <a href="index.php" class="logo" title="На главную">
@@ -138,9 +149,6 @@ if ($rowReviewsNumber != 0) {
                 }
         ?>
 
-</div>
-
- 
 </main>
 <!-- /.main -->
 <footer class="footer">
@@ -160,18 +168,8 @@ if ($rowReviewsNumber != 0) {
         </div>
     </div>
 </footer>
-</div>
 
-
-
-<div class="modal">
-    <p class="mod">Вы действительно хотите 
-        удалить профиль?</p>
-    <div class="buttons-mod">
-    <a href="php\del_user.php" class="mod" id="yes">Да</a>
-    <button class="mod" id="no">Нет</button>
-    </div>
-</div>  
+  
 <!-- кнопка наверх -->
 <a class="back_to_top" title="Наверх">↑</a>
 <script src="js\to_top.js"></script>

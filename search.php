@@ -26,7 +26,6 @@ if($search)
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <div class="page">
     <header class="header">
     <div class="container">
             <a href="index.php" class="logo" title="На главную">
@@ -86,8 +85,6 @@ if($search)
         }
 ?>
 
-
- </div>
  
 </main>
 <!-- /.main -->
@@ -108,7 +105,6 @@ if($search)
         </div>
     </div>
 </footer>
-</div>
 
 
 
