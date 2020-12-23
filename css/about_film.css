@@ -380,7 +380,7 @@ a.social-link:hover{
 
     .container{
         max-width: 1150px;
-        margin: 0 auto
+        margin: 0 auto;
     }
     a.login {
         padding: 3px 10px;
@@ -390,10 +390,10 @@ a.social-link:hover{
     }
     .container-promo, .container-about{
         max-width: 1150px;
-        margin: 0 auto
+        margin: 0 auto;
     }
     .container-about{
-        margin: 2%;
+        margin: 2% auto;
     }
     .promo-title{
         font-size: 33px;
@@ -427,7 +427,7 @@ a.social-link:hover{
         justify-content: center;
     }
     .container-about{
-        margin: 3%;
+        margin: 3% auto;
     }
     .search{
         display: flex;

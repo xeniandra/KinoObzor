@@ -4,13 +4,12 @@ const modal = document.querySelector(".modal-container");
 const noButton = document.querySelector("#no");
 const page = document.body;
 const p = document.querySelector(".review .full-review");
-const full = document.querySelector(".full");
+const full = document.querySelectorAll(".full");
 
 delButton.addEventListener('click', toggleModal);
 
 noButton.addEventListener('click', closeModal);
 
-full.addEventListener('click', fullReview);
 
 function toggleModal (){
     modal.style.display='flex'
@@ -24,12 +23,8 @@ function closeModal (){
     page.style.overflow = 'auto';
 }
 
-function fullReview (){
-    if(document.querySelector(".full-review")){
-        p.classList.remove("full-review")
-    }
-    else{
-        p.classList.add("full-review")
-    }
-    
-}
+full.forEach((elem) => {
+    elem.addEventListener('click', () =>{
+        elem.parentElement.parentElement.childNodes[1].classList.toggle("full-review");
+    });
+})

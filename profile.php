@@ -169,7 +169,6 @@ if ($rowReviewsNumber != 0) {
     </div>
 </footer>
 
-  
 <!-- кнопка наверх -->
 <a class="back_to_top" title="Наверх">↑</a>
 <script src="js\to_top.js"></script>
