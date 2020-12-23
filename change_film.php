@@ -4,7 +4,7 @@ require_once "php\connection.php";
 require_once "php\check_session.php";
 $getId = $_GET['filmID'];
 $query = "SELECT `id_film`, `name_film`, `country`, `genre`, `director`, `scenario`, `cast`, `duration`,
- `start_of_rental`, `poster`, `about_film`, `id_status` FROM `films` WHERE `id_film` = '$getId'";
+`start_of_rental`, `poster`, `about_film`, `id_status` FROM `films` WHERE `id_film` = '$getId'";
 $resultSelect = mysqli_query($link, $query);
 $SelectRow = mysqli_fetch_assoc($resultSelect);
 $id_film = $SelectRow['id_film'];
@@ -33,7 +33,7 @@ $id_status = $SelectRow['id_status'];
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <div class="page">
+    <header class="header">
     <div class="container">
             <a href="index.php" class="logo" title="На главную">
                 <img src="img\logo.svg" alt="Logo" class="logo">
