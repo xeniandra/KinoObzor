@@ -201,6 +201,7 @@ div.review ul{
     display: flex;
     justify-content: space-between;
     margin: 0;
+    padding-right: 0;
 }
 li.author, li.date-review{
     font-size: 22px;
@@ -219,6 +220,7 @@ p.review{
     line-height: 130%;
     align-items: center;
     text-align: justify;
+    white-space: pre-wrap;
 }
 div.my-review{
     max-width: 862px;

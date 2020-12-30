@@ -21,7 +21,7 @@ if($search)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\normalize.css">
     <link rel="stylesheet" href="css\profile.css">
-    <title>KinoObzor - Поиск фильмов</title>
+    <title>KinoObzor - Результаты поиска</title>
     <link rel="shortcut icon" href="img\XMLID.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
@@ -45,7 +45,7 @@ if($search)
 <main class="main">
 
     <div class="reelh">
-        <h2>ПОИСК ФИЛЬМОВ</h2>
+        <h2>РЕЗУЛЬТАТЫ ПОИСКА</h2>
     </div>
 <?php
     if (mysqli_num_rows(mysqli_query($link, $query)) > 0) {
@@ -79,7 +79,7 @@ if($search)
     else {
 ?>
     <div class="mess">
-            <p>Фильм не найден, попробуйте еще</p>
+            <p>Фильм не найден, попробуйте еще раз</p>
     </div>
 <?
         }

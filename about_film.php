@@ -20,7 +20,7 @@ $poster = $SelectRow['poster'];
 $about_film = $SelectRow['about_film'];
 $id_status = $SelectRow['id_status'];
 
-$queryReviews = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `id_status`, `id_film` FROM `review` WHERE `id_film` = '$getId' AND `id_status` = 1";
+$queryReviews = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `id_status`, `id_film` FROM `review` WHERE `id_film` = '$getId' AND `id_status` = 1 ORDER BY `date_review` DESC";
 
 $Review = "SELECT `id_review` FROM `review` WHERE `id_film` = '$getId' AND `id_status` = 1";
 $resultReview = mysqli_query($link, $Review);
@@ -105,7 +105,7 @@ $row = mysqli_num_rows($resultReview);
                 <li class="author"><?=$user_nick;?></li>
                 <li class="date-review"><?=$date_review;?></li>
             </ul>
-            <p class="review"><?=$text_review;?></p>
+            <p class="review"><?=nl2br($text_review);?></p>
         </div>
 
         <?

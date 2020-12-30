@@ -20,6 +20,7 @@ while ($row = mysqli_fetch_row($result)) {
         $id_user = $id_data[0];
         $_SESSION['id_user'] = $id_user;
         header('Location: ../profile.php');
+        exit();
     }
     else{
         $message = 1;

@@ -14,7 +14,7 @@ $queryReviewUserNumber = "SELECT `id_user` FROM `review` WHERE `id_user` = '$id_
 $resultReviewsUserNumber = mysqli_query($link, $queryReviewUserNumber);
 $rowReviewsNumber = mysqli_num_rows($resultReviewsUserNumber);
 // 
-$queryReviewUser = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `review`.`id_status`, `status`, `name_film`, `poster`, `review`.`id_film` FROM `review`, `films`, `status_review` WHERE `id_user` = '$id_user' AND `review`.`id_film` = `films`.`id_film` AND `review`.`id_status` = `status_review`.`id_status`";
+$queryReviewUser = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `review`.`id_status`, `status`, `name_film`, `poster`, `review`.`id_film` FROM `review`, `films`, `status_review` WHERE `id_user` = '$id_user' AND `review`.`id_film` = `films`.`id_film` AND `review`.`id_status` = `status_review`.`id_status` ORDER BY `date_review` DESC";
 // КОЛ-ВО ВХОДЯЩИХ ОТЗЫВОВ
 $queryReviews = "SELECT `id_review` FROM `review` WHERE `id_status` = 3";
 $resultReviews = mysqli_query($link, $queryReviews);
@@ -129,7 +129,7 @@ if ($rowReviewsNumber != 0) {
            
         </div>
         <div class="my-rev">
-            <p class="review full-review"><?=$text_review;?></p>
+            <p class="review full-review"><?=nl2br($text_review);?></p>
             <div class="buttons-rev">
                 <button class="full">Читать полностью</button>
                 <a href="php\del_review.php?reviewID=<?=$id_review;?>" class="del-review">Удалить</a>    

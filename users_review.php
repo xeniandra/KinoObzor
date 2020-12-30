@@ -7,7 +7,7 @@ $queryReviews = "SELECT `id_review` FROM `review` WHERE `id_status` = 3";
 $resultReviews = mysqli_query($link, $queryReviews);
 $rowReviews = mysqli_num_rows($resultReviews);
 //
-$queryReviewsShow = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `id_status`, `id_film` FROM `review` WHERE `id_status` = 3";
+$queryReviewsShow = "SELECT `id_review`, `id_user`, `date_review`, `text_review`, `id_status`, `id_film` FROM `review` WHERE `id_status` = 3 ORDER BY `date_review` DESC";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -78,7 +78,7 @@ while ($SelectRow = mysqli_fetch_assoc($result)) {
            
         </div>
         <div class="my-rev">
-            <p class="review full-review"><?=$text_review;?></p>
+            <p class="review full-review"><?=nl2br($text_review);?></p>
             <div class="buttons-rev">
                 <button class="full">Читать полностью</button>
                 <form action="#" class="form-review">

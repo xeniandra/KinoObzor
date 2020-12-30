@@ -259,7 +259,7 @@ p.review{
     font-size: 19px;
     line-height: 111.5%;
     text-align: justify;
-
+    white-space: pre-wrap;
 }
 
 .full-review{
@@ -272,6 +272,7 @@ p.review{
     -webkit-box-orient: vertical;
     line-clamp: 5;
     box-orient: vertical;
+    white-space: pre-wrap;
 }
 
 
