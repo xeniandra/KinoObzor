@@ -68,7 +68,7 @@ $thanks = $_GET['thanks'];
             <input type="text" name="start_of_rental" class="input-auth" required>
             <label for="about_film">О фильме:</label>
             <input type="textarea" name="about_film" class="input-auth" required>
-            <label for="download" class="download">Загрузить постер</label>
+            <label for="download" class="download">Постер:</label>
             <input type="url" name="download" placeholder="Введите URL постера" class="input-auth" required>
             <label for="status">Статус фильма:</label>
 				<select name="status" class="input-auth">

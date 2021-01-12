@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 17 2020 г., 21:38
+-- Время создания: Янв 12 2021 г., 15:40
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.4.5
 
@@ -29,18 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `films` (
   `id_film` int NOT NULL COMMENT 'id фильма',
-  `name_film` varchar(255) NOT NULL COMMENT 'Название',
-  `country` varchar(255) NOT NULL COMMENT 'Страна',
-  `genre` varchar(255) NOT NULL COMMENT 'Жанр',
-  `director` varchar(255) NOT NULL COMMENT 'Режиссер',
-  `scenario` varchar(255) NOT NULL COMMENT 'Сценарий',
-  `cast` varchar(255) NOT NULL COMMENT 'В ролях',
-  `duration` varchar(255) NOT NULL COMMENT 'Длительность',
-  `start_of_rental` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Начало проката',
-  `poster` text NOT NULL COMMENT 'url Постера',
-  `about_film` text NOT NULL COMMENT 'О фильме',
+  `name_film` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Название',
+  `country` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Страна',
+  `genre` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Жанр',
+  `director` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Режиссер',
+  `scenario` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Сценарий',
+  `cast` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'В ролях',
+  `duration` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Длительность',
+  `start_of_rental` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Начало проката',
+  `poster` text COLLATE utf8mb4_general_ci NOT NULL COMMENT 'url Постера',
+  `about_film` text COLLATE utf8mb4_general_ci NOT NULL COMMENT 'О фильме',
   `id_status` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `films`
@@ -70,18 +70,20 @@ CREATE TABLE `review` (
   `id_review` int NOT NULL COMMENT 'id отзыва',
   `id_user` int NOT NULL COMMENT 'id пользователя ',
   `date_review` datetime NOT NULL COMMENT 'дата и время отзыва',
-  `text_review` text NOT NULL COMMENT 'текст отзыва',
+  `text_review` text COLLATE utf8mb4_general_ci NOT NULL COMMENT 'текст отзыва',
   `id_status` int NOT NULL COMMENT 'статус отзыва',
   `id_film` int NOT NULL COMMENT 'id фильма'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `review`
 --
 
 INSERT INTO `review` (`id_review`, `id_user`, `date_review`, `text_review`, `id_status`, `id_film`) VALUES
-(13, 1, '2020-12-17 18:53:54', 'Искусственный интеллект выбрал женщину в качестве образца для наблюдений за человечеством. В зависимости от поведения героини высший компьютерный разум решит, оставлять несовершенных людишек в живых или стереть с лица Земли.\r\nИскусственный интеллект выбрал женщину в качестве образца для наблюдений за человечеством. В зависимости от поведения героини высший компьютерный разум решит, оставлять несовершенных людишек в живых или стереть с лица Земли.\r\nИскусственный интеллект выбрал женщину в качестве образца для наблюдений за человечеством. В зависимости от поведения героини высший компьютерный разум решит, оставлять несовершенных людишек в живых или стереть с лица Земли.\r\nИскусственный интеллект выбрал женщину в качестве образца для наблюдений за человечеством. В зависимости от поведения героини высший компьютерный разум решит, оставлять несовершенных людишек в живых или стереть с лица Земли.', 1, 2),
-(14, 1, '2020-12-17 18:54:50', 's', 2, 3);
+(21, 1, '2020-12-30 20:16:09', 'Хороший, смешной фильм', 1, 2),
+(22, 4, '2021-01-12 15:37:45', 'Хоть и все действие фильма происходит в одном доме, но это не мешает режиссеру фильма Анишу Чаганти разоблачить все основные достижения современногомира. Причем делает он это умело с присущим ему сарказмом, уже известным нам по его фильму «Поиск».\r\nСовременные технологии сделали людей уже настолько беспомощным, что без интернета многие действия в жизни становятся проблематичными, особенно это касается инвалидов, прикованных к креслу. Отсутствие интернета для людей с ограниченными возможностями становятся тяжелой проблемой, делает их изгоями в обществе.\r\n\r\nИтог ужасен: самые близкие люди вынуждены существовать взаперти от этого враждебного современного мира, уничтожая друг друга постоянно.\r\nВ фильме \"Взаперти\" (2020) главным оружием является смекалка, которая становится толчком к захватывающему и изобретательному экшену. Наблюдать за этими преисполненными драйва и напряжения сценами фильма– а их здесь немало! – очень увлекательно.', 1, 4),
+(23, 4, '2021-01-12 15:39:18', 'Поставлю пятёрку. Сравнивать с более ранними шедеврами Земекиса бесполезно, да и не надо. Те его фильмы действительно были нечто, а это так… Просто развлекательное и милое кино. Рекомендую, спасибо.', 1, 1),
+(24, 1, '2021-01-12 15:40:20', 'Понравилось кино. Оно действительно получилось семейным. Юмор тоже зашёл.', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -90,9 +92,9 @@ INSERT INTO `review` (`id_review`, `id_user`, `date_review`, `text_review`, `id_
 --
 
 CREATE TABLE `roles` (
-  `id_role` int NOT NULL,
-  `role` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id_role` int NOT NULL COMMENT 'id роли',
+  `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Роль пользователя'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `roles`
@@ -109,9 +111,9 @@ INSERT INTO `roles` (`id_role`, `role`) VALUES
 --
 
 CREATE TABLE `status_film` (
-  `id_status` int NOT NULL,
-  `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id_status` int NOT NULL COMMENT 'id статуса',
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Статус фильма'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `status_film`
@@ -129,9 +131,9 @@ INSERT INTO `status_film` (`id_status`, `status`) VALUES
 --
 
 CREATE TABLE `status_review` (
-  `id_status` int NOT NULL,
-  `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id_status` int NOT NULL COMMENT 'id статуса',
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Статус отзыва'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `status_review`
@@ -150,18 +152,20 @@ INSERT INTO `status_review` (`id_status`, `status`) VALUES
 
 CREATE TABLE `user` (
   `id_user` int NOT NULL COMMENT 'id пользователя',
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Email',
-  `nick` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Никнейм',
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'Пароль',
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Email',
+  `nick` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Никнейм',
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Пароль',
   `id_role` int NOT NULL COMMENT 'Роль пользователя'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `user`
 --
 
 INSERT INTO `user` (`id_user`, `email`, `nick`, `password`, `id_role`) VALUES
-(1, 'muntikas@mail.ru', 'Xeniandra', '$2y$10$BUy6zYv0nijcuSlOwdmm1.eDE0Yc/55J3CbXVY97rb0fnb7giqB9e', 2);
+(1, 'muntikas@mail.ru', 'Xeniandra', '$2y$10$BUy6zYv0nijcuSlOwdmm1.eDE0Yc/55J3CbXVY97rb0fnb7giqB9e', 2),
+(2, 'user@mail.ru', 'user', '$2y$10$tuyF3s20x1WT02ww8fvHIOphEKLATaKUX6uMZL1PVzRugIocQFwKe', 1),
+(4, 'admin@mail.ru', 'admin', '$2y$10$ch78nsSKhYkSWxdAOklrT.WAfUXpG.clCOPQ4StX4hw2RpAWJ.NUe', 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -222,31 +226,31 @@ ALTER TABLE `films`
 -- AUTO_INCREMENT для таблицы `review`
 --
 ALTER TABLE `review`
-  MODIFY `id_review` int NOT NULL AUTO_INCREMENT COMMENT 'id отзыва', AUTO_INCREMENT=16;
+  MODIFY `id_review` int NOT NULL AUTO_INCREMENT COMMENT 'id отзыва', AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT для таблицы `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_role` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_role` int NOT NULL AUTO_INCREMENT COMMENT 'id роли', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `status_film`
 --
 ALTER TABLE `status_film`
-  MODIFY `id_status` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_status` int NOT NULL AUTO_INCREMENT COMMENT 'id статуса', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `status_review`
 --
 ALTER TABLE `status_review`
-  MODIFY `id_status` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_status` int NOT NULL AUTO_INCREMENT COMMENT 'id статуса', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT COMMENT 'id пользователя', AUTO_INCREMENT=2;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT COMMENT 'id пользователя', AUTO_INCREMENT=5;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

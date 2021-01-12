@@ -11,7 +11,7 @@ $message = $_GET['message'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\normalize.css">
     <link rel="stylesheet" href="css\auth.css">
-    <title>KinoObzor - Изменение профиля</title>
+    <title>KinoObzor - Изменение данных профиля</title>
     <link rel="shortcut icon" href="img\XMLID.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
@@ -35,7 +35,7 @@ $message = $_GET['message'];
 <main class="main">
 
     <div class="reelh">
-        <h2>ИЗМЕНИТЬ ДАННЫЕ ПРОФИЛЯ</h2>
+        <h2>ИЗМЕНЕНИЕ ДАННЫХ ПРОФИЛЯ</h2>
     </div>
 <?php
     if($message == 1){

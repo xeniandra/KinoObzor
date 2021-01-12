@@ -74,7 +74,7 @@ $id_status = $SelectRow['id_status'];
             <input type="text" name="about_film" value="<?=$about_film;?>" class="input-auth" required>
             <label for="start_of_rental">Начало проката:</label>
             <input type="text" name="start_of_rental" value="<?=$start_of_rental;?>" class="input-auth" required>
-            <label for="download" class="download">Загрузить постер</label>
+            <label for="download" class="download">Постер:</label>
             <input type="url" name="download" value="<?=$poster;?>" class="input-auth" required>
             <label for="status">Статус фильма:</label>
 				<select name="status" class="input-auth">
