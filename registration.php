@@ -39,7 +39,7 @@ $message = $_GET['message'];
 <?php
     if($message == 1){
 ?>
-    <p class="unsucessfull-add"><?="Пользователь с такими данными уже существует!"?></p>
+    <p class="unsucessfull-add"><?="Пользователь с такими данными уже существует"?></p>
 <?
     }
 ?>

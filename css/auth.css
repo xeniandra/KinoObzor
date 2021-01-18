@@ -258,7 +258,7 @@ a.to-reg:hover{
     margin-bottom: 0;
 }
 .unsucessfull-add{
-    color: red;
+    color: #000000;
 }
 /* кнопка наверх */
 .back_to_top {

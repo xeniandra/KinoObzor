@@ -124,7 +124,7 @@ $row = mysqli_num_rows($resultReview);
         if (empty($_SESSION['email'])) {
         ?>
             <div class="message">
-                <p class="message">Оставлять отзывы могут только авторизованные пользователи!</p>
+                <p class="message">Оставлять отзывы могут только авторизованные пользователи</p>
             </div> 
         <?
         }
